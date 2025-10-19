@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="theme-a"> <!-- Class should match main page for consistency -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: Real-Time Anomaly Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css"> <!-- Link back to the main stylesheet -->
+    <style>
+        /* Additional styles for this specific page */
+        body { padding: 2rem; }
+        .case-study-container { max-width: 800px; margin: 4rem auto; }
+        .back-link { display: inline-block; margin-bottom: 2rem; }
+        .code-snippet { background-color: var(--color-panel-bg); padding: 1rem; border-radius: 8px; font-family: monospace; white-space: pre-wrap; margin: 1rem 0; }
+        .demo-gif { width: 100%; max-width: 600px; margin: 1rem auto; display: block; border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <div class="case-study-container">
+        <a href="../index.html#project" class="back-link">&larr; Back to Portfolio</a>
+        
+        <h1>Case Study: Real-Time Anomaly Detection in Sensor Data</h1>
+        <p class="tagline">An in-depth look at the design, implementation, and deployment of an LSTM Autoencoder for predictive maintenance.</p>
+
+        <h2>Project Overview</h2>
+        <p>The goal of this project was to build a system capable of identifying anomalies in real-time sensor data from industrial machinery. Early detection of such anomalies can prevent costly equipment failures. The core of the solution is an LSTM-based autoencoder that learns the normal patterns of operation and flags deviations.</p>
+
+        <h2>Technical Deep Dive</h2>
+        <p>The model was implemented in PyTorch. An LSTM architecture was chosen due to its ability to capture temporal dependencies in time-series data. The model was trained on a large dataset of normal operational data to minimize reconstruction error. The final anomaly detection threshold was determined using a validation set containing both normal and anomalous data points to maximize the F1-score.</p>
+
+        <h3>Code Snippet: Model Training Loop</h3>
+        <p>The following snippet showcases the core training logic. The full, documented code is available in the GitHub repository.</p>
+        <pre class="code-snippet"><code>
+def train_model(model, data_loader, n_epochs):
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
+    criterion = nn.L1Loss(reduction='sum')
+    
+    for epoch in range(n_epochs):
+        for seq_true in data_loader:
+            optimizer.zero_grad()
+            seq_pred = model(seq_true)
+            loss = criterion(seq_pred, seq_true)
+            loss.backward()
+            optimizer.step()
+        print(f'Epoch {epoch+1}: Loss = {loss.item()}')
+        </code></pre>
+
+        <h2>Deployment & Demo</h2>
+        <p>The trained model was exposed via a REST API using FastAPI for its high performance. The entire application, including the Python environment and model weights, was containerized using Docker. This allows the inference service to be deployed consistently across different environments.</p>
+
+        <!-- Replace with your actual GIF -->
+        <img src="../assets/images/project-gif.gif" alt="Animated GIF showing the model detecting an anomaly in a data stream." class="demo-gif">
+
+        <a href="https://github.com/your-username/your-repo" target="_blank" class="btn btn-primary" style="margin-top: 2rem;">View Full Code on GitHub</a>
+    </div>
+
+    <script>
+        // Simple script to apply the theme from localStorage to this page too
+        const storedTheme = localStorage.getItem('portfolioTheme');
+        if (storedTheme) {
+            document.documentElement.className = storedTheme;
+        }
+    </script>
+</body>
+</html>
