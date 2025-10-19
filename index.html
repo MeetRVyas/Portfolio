@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" class="theme-a">
+<html lang="en" class="theme-light"> <!-- Default theme is now light -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firstname Lastname — Aspiring ML Engineer</title>
-    <meta name="description" content="Portfolio of an aspiring Machine Learning Engineer showcasing projects in ML, Python, and more.">
+    <meta name="description" content="Portfolio of an aspiring Machine Learning Engineer focused on core ML, computer vision, and low-level programming.">
     
     <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +21,13 @@
     <header class="header-nav">
         <nav>
             <a href="#home">Home</a>
-            <a href="#project">Project</a>
-            <a href="#learning">Philosophy</a>
+            <a href="#skills">Skills</a>
+            <a href="#philosophy">Philosophy</a>
+            <a href="#interests">Interests</a>
             <a href="#contact">Contact</a>
         </nav>
-        <button id="theme-toggle" aria-label="Toggle theme">
-            <!-- Icons will be loaded by JS -->
+        <button id="theme-toggle" aria-label="Switch to dark theme">
+            <img src="assets/icons/moon.svg" alt="Theme toggle icon">
         </button>
     </header>
 
@@ -37,11 +38,10 @@
                 <h1>Firstname Lastname</h1>
                 <p class="subtitle">Aspiring ML Engineer</p>
                 <p class="value-statement">
-                    Technically rigorous ML engineer building robust, well-documented models and production-ready prototypes.
+                    A detail-oriented engineer passionate about building efficient and well-structured machine learning solutions. I combine strong ML fundamentals with a focus on writing clean, readable code and a curiosity for how software interacts with hardware.
                 </p>
                 <div class="cta-buttons">
-                    <a href="#project" class="btn btn-primary">View Key Project</a>
-                    <a href="assets/resume.pdf" target="_blank" class="btn btn-secondary">View Resume</a>
+                    <a href="assets/resume.pdf" target="_blank" class="btn btn-primary">View Resume</a>
                     <a href="#contact" class="btn btn-secondary">Contact Me</a>
                 </div>
             </div>
@@ -50,98 +50,125 @@
         <!-- SKILLS -->
         <section id="skills" class="skills-section">
             <div class="container">
-                <div class="skills-list">
-                    <div class="skill-item">
-                        <span class="skill-name">Machine Learning</span>
-                        <div class="skill-bar" data-level="4" title="Advanced"></div>
+                <h2>Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>C / C++</li>
+                            <li>SQL</li>
+                            <li>R</li>
+                            <li>Assembly</li>
+                        </ul>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">Python</span>
-                        <div class="skill-bar" data-level="5" title="Expert"></div>
+                    <div class="skill-category">
+                        <h3>ML Libraries</h3>
+                        <ul>
+                            <li>TensorFlow</li>
+                            <li>LangChain</li>
+                            <li>Scikit-learn</li>
+                            <li>NumPy / Pandas</li>
+                        </ul>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">PyTorch/TensorFlow</span>
-                        <div class="skill-bar" data-level="3" title="Intermediate"></div>
+                    <div class="skill-category">
+                        <h3>Frameworks & Databases</h3>
+                        <ul>
+                            <li>FastAPI / Flask</li>
+                            <li>MySQL</li>
+                            <li>PostgreSQL</li>
+                        </ul>
                     </div>
-                    <div class="skill-item">
-                        <span class="skill-name">FastAPI</span>
-                        <div class="skill-bar" data-level="3" title="Intermediate"></div>
-                    </div>
-                     <div class="skill-item">
-                        <span class="skill-name">C/C++</span>
-                        <div class="skill-bar" data-level="2" title="Beginner"></div>
+                    <div class="skill-category">
+                        <h3>Tools & Visualization</h3>
+                        <ul>
+                            <li>Git / GitHub</li>
+                            <li>Docker</li>
+                            <li>Matplotlib / Seaborn</li>
+                            <li>Jupyter / VS Code</li>
+                            <li>Shell Scripting (WSL)</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- KEY PROJECT -->
+        <!-- 
+        ============================================================
+        PROJECT SECTIONS - COMMENTED OUT FOR NOW
+        Uncomment these sections when you are ready to add projects.
+        ============================================================
+
         <section id="project" class="project-section">
             <div class="container">
                 <h2>Key Project</h2>
                 <div class="project-card">
-                    <h3>Real-Time Anomaly Detection in Sensor Data</h3>
-                    <p class="tagline">A robust LSTM Autoencoder to detect anomalies in high-frequency time-series data for predictive maintenance.</p>
-                    
-                    <p><strong>Role & Tech Stack:</strong> Solo Developer | Python, PyTorch, FastAPI, Docker</p>
-                    
-                    <h4>Approach:</h4>
-                    <ul>
-                        <li>Engineered a data pipeline to process and normalize a 10GB sensor dataset.</li>
-                        <li>Designed and trained an LSTM-based autoencoder model to learn normal operational patterns.</li>
-                        <li>Identified anomalies by flagging data points with high reconstruction error.</li>
-                        <li>Developed a REST API using FastAPI for real-time inference and model deployment.</li>
-                        <li>Containerized the application with Docker for portability and scalability.</li>
-                    </ul>
-                    
-                    <h4>Outcome & Metrics:</h4>
-                    <p>Achieved a <strong>98.7% F1-score</strong> in identifying critical anomalies, outperforming a baseline statistical model by 15%. Average inference latency is under <strong>50ms</strong> per request.</p>
-
-                    <h4>What I Learned:</h4>
-                    <p>This project deepened my understanding of unsupervised learning for time-series data and the practical challenges of deploying ML models. I focused on writing clean, modular code and ensuring the inference endpoint was both fast and reliable.</p>
-                    
-                    <div class="project-links">
-                        <a href="https://github.com/your-username/your-repo" target="_blank" class="btn btn-secondary">GitHub Repo</a>
-                        <a href="projects/key-project.html" class="btn btn-secondary">Full Case Study</a>
-                    </div>
-
-                    <img src="assets/images/project_screenshot.png" alt="Screenshot of the anomaly detection model's output visualization." class="project-image">
+                    <h3>Project Title</h3>
+                    <p class="tagline">A short, compelling tagline for your project.</p>
                 </div>
             </div>
         </section>
 
-        <!-- OTHER PROJECTS -->
         <section id="other-projects" class="other-projects-section">
             <div class="container">
                 <h2>Other Projects</h2>
                 <ul class="mini-project-list">
-                    <li>
-                        <a href="https://github.com/" target="_blank">Compiler Optimization in C++</a> — A small project exploring loop unrolling and instruction scheduling to optimize matrix multiplication.
-                    </li>
-                    <li>
-                        <a href="https://github.com/" target="_blank">CLI-based Chess Engine</a> — Developed a simple chess engine using minimax with alpha-beta pruning in Python.
-                    </li>
+                    <li><a href="#">Project A</a> — One-line description.</li>
+                    <li><a href="#">Project B</a> — One-line description.</li>
                 </ul>
             </div>
-        </section>
-        
-        <!-- LEARNING JOURNEY -->
-        <section id="learning" class="learning-section">
+        </section> 
+        -->
+
+        <!-- PHILOSOPHY SECTION -->
+        <section id="philosophy" class="philosophy-section">
             <div class="container">
-                <h2>Learning Journey & Philosophy</h2>
-                <p>I focus deeply on core areas — especially ML and AI — and prefer mastering fundamentals over surface-level breadth. I learn by building projects, dissecting models, and iterating to production.</p>
+                <h2>My Philosophy</h2>
+                <div class="philosophy-content">
+                    <h3>A Methodical Learning Process</h3>
+                    <p>
+                        My approach to learning is methodical and foundational. I typically begin with high-level resources like university lectures to grasp the core concepts of a new topic. From there, I dive into official documentation and tutorials to understand the practical specifics of implementation. I believe that building this strong theoretical foundation is the key to effective problem-solving, as it allows me to reason about why a certain approach might be better than another.
+                    </p>
+                    <h3>Striving for Depth</h3>
+                    <p>
+                        While the tech market often rewards breadth, my personal goal is to cultivate depth. I am driven by a desire to understand the 'why' behind the tools I use. This principle guides me to spend extra time exploring the fundamental mechanics of an algorithm or system, as I believe this is the path to becoming a more capable and insightful engineer.
+                    </p>
+                    <h3>Writing Clean and Maintainable Code</h3>
+                    <p>
+                        An ML model is only as effective as the code that implements it. I focus on writing software that is clean, readable, and well-documented. While I am still early in my career, I practice the habits of modular design and clear commenting. My goal is to produce work that is not only correct, but also easy for others to understand, review, and build upon.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- HOBBIES -->
-        <section id="hobbies" class="hobbies-section">
+        <!-- INTERESTS SECTION -->
+        <section id="interests" class="interests-section">
             <div class="container">
-                <h2>Personal Interests</h2>
-                <ul>
-                    <li><strong>Music:</strong> Disciplined practice & pattern recognition</li>
-                    <li><strong>Chess:</strong> Strategic problem solving</li>
-                    <li><strong>Math:</strong> Love of rigorous reasoning</li>
-                </ul>
+                <h2>Technical Interests</h2>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <h4>Machine Learning Core</h4>
+                        <p>A deep fascination with the 'why' behind algorithms, from statistical learning theory to the architectural choices in deep neural networks.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>Computer Vision</h4>
+                        <p>Exploring how machines can interpret the visual world, with a focus on efficient object detection and image segmentation models.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>Computer Architecture & Low-Level Programming</h4>
+                        <p>
+                            I am fascinated by what happens "under the hood." My experience implementing data structures from scratch and coding in Assembly taught me to appreciate the connection between code and hardware.
+                        </p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>Chess</h4>
+                        <p>A passion for strategic problem-solving, evaluating complex trade-offs, and thinking several moves ahead—skills directly applicable to model design.</p>
+                    </div>
+                    <div class="interest-item">
+                        <h4>Mathematics</h4>
+                        <p>A love for rigorous, logical reasoning and the elegant proofs that form the bedrock of machine learning and computer science.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -164,6 +191,5 @@
             <a href="assets/resume.pdf" target="_blank" class="btn btn-primary resume-btn">Download Full Resume</a>
         </div>
     </footer>
-
 </body>
 </html>
