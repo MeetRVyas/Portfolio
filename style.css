@@ -303,10 +303,7 @@ html.theme-dark .header-nav {
 
 /* The icon now lives inside the wrapper */
 .icon-wrapper img {
-    width: 24px;
-    height: 24px;
-    /* This static filter makes the SVG icons dark gray, ensuring contrast on the light background in BOTH themes. */
-    filter: invert(15%) sepia(21%) saturate(553%) hue-rotate(176deg) brightness(95%) contrast(88%);
+    width: 32px;
 }
 
 .contact-link:hover .icon-wrapper {
